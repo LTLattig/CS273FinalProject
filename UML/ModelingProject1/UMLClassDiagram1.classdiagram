@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="20cc1ef1-9af2-4998-9f23-f89b49554d78" name="UMLClassDiagram1" linkedPackageId="fc101a93-0e35-4735-b895-3153190bd161" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="b0adac86-5395-4b31-846b-814f63e4a68f">
+      <elementDefinition Id="5fd44bce-8e27-4b53-8e76-9738c3889c36" />
+      <body>Friend Class</body>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a99135b0-791e-4f1a-a4d5-3eb1ad653c52" name="DoctorTreatmentQueue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fdeb8aea-8497-4b8d-8975-e90e06f7094d" />
+        <generalsInternal>
+          <generalization Id="a33099f9-f06b-429c-b2c8-e30b7de75912" isSubstitutable="false">
+            <classMoniker Id="18b55ba4-06e5-4c6c-b3e4-681be21b0f71" LastKnownName="TreatmentQueue" />
+            <elementDefinition Id="f4a149ea-f783-4556-b0f6-96f7e6fdb536" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="e7bf43d4-2653-4beb-91fd-c83222ce5779" name="Max_treament_time" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cd68b039-46f3-4e46-8fac-ca3c4d6f210d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6de6c768-868f-43f5-a83a-b16b8924cc7a" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="bca211f3-34ab-4581-87d1-fdc63b5a3e9e" name="min_treatment_time" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="15086264-3cd0-4536-89bd-47d8249bcf7a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="6de6c768-868f-43f5-a83a-b16b8924cc7a" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="384fe3df-d959-4435-81a6-e068e2cce623" name="get_treatment_complete_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="1e6dd78b-d30d-4844-a8bb-5ac4524824dd" />
+          </operation>
+          <operation Id="8f40e7fb-ab75-40c2-9585-5f17871bd985" name="set_leave_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="11114ce1-fbba-4829-aab5-14c723b319fe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="14f692c1-3858-419e-88bf-37a6dff12e73" name="int leave_time" direction="In" isUnique="false">
+                  <elementDefinition Id="3ed00a03-1ae9-49d8-a868-d4bf899f7371" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="2e5bc614-644d-4301-8064-45283c8f907b" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fd01d8ee-5bef-4204-8339-6d98c9c0842e" />
+          </operation>
+          <operation Id="9bec4eb1-b63a-4797-9d0a-85106cd36a10" name="set_treatment_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9bd059a5-8e82-4b0b-84f6-89779b207efb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cf9b02c3-9e6e-4b9c-b864-802b51e2220f" name="int max_treatnent" direction="In" isUnique="false">
+                  <elementDefinition Id="64eda503-6e9a-4304-8b17-e74bf2c4d3fb" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="81cef7bd-c526-44ae-aa47-489656482ac0" name="int min_treatment" direction="In" isUnique="false">
+                  <elementDefinition Id="0e5314b9-4c2f-4339-81b4-f0cfe4ec4db9" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="56e3480b-6de2-4a8c-ba6b-5c36f7a14db3" name="Patient" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6c9eacc2-aa7b-441f-b52b-e702f8b541eb" />
+        <ownedAttributesInternal>
+          <property Id="64028965-d30c-4462-9a91-738fbecdba3e" name="name" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4b6c8508-4d40-4995-8718-ad226206ee2c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7a529e6d-2cec-4639-ab66-c0c1f61c2efc" LastKnownName="string" />
+            </type_NamedElement>
+          </property>
+          <property Id="e6ec8aad-07ce-477b-884f-b4c5085401cf" name="severity" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0fc253c6-6921-4a61-ba48-5511eae0c0d9" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="ce24710f-bc70-462b-b306-06274dd3a011" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="8a11497a-9e5d-415b-b758-ca80fc814ac4" name="wait_time" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ea763399-df0e-47f2-b6f1-b6fec5531bd0" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="3fbd7e46-eb4a-43c6-bcf8-982bc016d121" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="93d264df-fc3b-432e-a092-f53c5ac9b9c6" name="get_name" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="99e924c4-f42c-4f55-8634-46e729823f5f" />
+          </operation>
+          <operation Id="5441fc7a-004b-476d-aa97-74fdfd63e396" name="get_severity" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e17af481-0961-4b4a-8a75-1df28bd5d345" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="52d9bbdb-a275-4c9c-9b77-c4ea4376b096" name="int index" direction="In" isUnique="false">
+                  <elementDefinition Id="c6257912-ded2-4ee0-95ff-101a12b82522" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c7059dbc-aeda-4f2d-8312-9962d3c02bce" name="get_wait_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a0d4a8ef-e518-4d12-82b3-671419a53a4d" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="38936111-92a0-4824-9dd6-a3127877a5ba" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bde8f537-211b-4d22-bb31-8aed00af05dc" name="WaitingRoomQueue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="51a52163-bca1-43ac-9ad4-ed788d678024" />
+        <suppliersInternal>
+          <dependency Id="dcb7d5ee-c030-484c-84fd-4a6696de1c93">
+            <classMoniker Id="18b55ba4-06e5-4c6c-b3e4-681be21b0f71" LastKnownName="TreatmentQueue" />
+            <elementDefinition Id="1453bfe0-42b2-45fb-a304-e0305a1c16ba" />
+          </dependency>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="80627659-1398-4115-a7b4-d71f3f3312d2" isDerived="false" sourceEndRoleName="WaitingRoomQueue" targetEndRoleName="Patient" isLeaf="false" isAbstract="false">
+            <classMoniker Id="56e3480b-6de2-4a8c-ba6b-5c36f7a14db3" LastKnownName="Patient" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="581bcf7a-6117-4fd3-91f6-4a93a5c31cad" name="WaitingRoomQueue" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="f2b0707c-c12d-4b6c-b31f-8b2da1573edb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="c379e54b-e222-45a6-b9b6-ef5dd8ea9e7d" name="Patient" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="54e60503-ba99-48c4-9e3d-20d9e3a273bd" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c11ff0c2-8313-47fb-8ecd-0ad86124d767" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="4a7895c7-a5cd-484b-a24e-e415daafb8e6" name="Arrival_rate" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0ac14a18-9261-4022-bb76-3bd295495bbf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7c45056a-63cd-4044-b44c-ad13df30b40c" LastKnownName="double" />
+            </type_NamedElement>
+          </property>
+          <property Id="194e1bc9-91e6-4eaf-9f4f-3928993a6327" name="the_queue" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fc59e9ae-77b6-4967-aea6-47f5de2d482b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="5aa028f2-b7e7-4a92-9a66-eb748c53ba81" LastKnownName="priority_queue&lt;Patient&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="20c06fed-02f6-45f8-829b-3147f7a63633" name="total_wait" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5c68a6e1-3a89-4f74-a745-7d64a599a8aa" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="38936111-92a0-4824-9dd6-a3127877a5ba" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="eea2e6a8-6b25-44f5-bea2-5e1b2f888fef" name="number_treated" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="3da8d559-76cc-4656-a7ca-83b9781ef06a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="38936111-92a0-4824-9dd6-a3127877a5ba" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="862dfdb1-8cef-4358-9717-ab0b13caeba8" name="Records" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="04297472-81c1-432e-b3d8-2881efbd51e4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9e08f5de-4884-474a-a091-9f03795daae3" LastKnownName="multiset&lt;Patient&gt;" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="6f4a73a1-707d-4e2d-84ac-012e154984a8" name="set_patient_arrival_rate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="707a72ac-76f2-4cbd-ad0b-869bfc6b97c1" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="432bb37e-01c3-4965-9a4f-de87668f0030" name="double Arrival_rate" direction="In" isUnique="false">
+                  <elementDefinition Id="70fd63af-d9cd-4d15-9e67-b1f443aceb5a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="190da5f6-a6f3-4d69-8a38-e123aaf0a2aa" name="get_total_wait" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7a7df8d1-745f-4a6d-baf0-9c164df1d8da" />
+          </operation>
+          <operation Id="313858e3-e472-4879-a5c3-447350e4c85e" name="get_num_served" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f28aab44-9cf6-4d74-accf-9d1c93ece8b0" />
+          </operation>
+          <operation Id="2b550072-6fbd-4bc7-828e-ad93f7905e70" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9a3a173e-6b1e-4c5f-ab15-f4c8a3359273" />
+          </operation>
+          <operation Id="07ed6bfc-3723-4c04-b856-37d5b104028a" name="get_records" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="806ecb98-2376-4ca8-86da-69089261bae9" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="7c45056a-63cd-4044-b44c-ad13df30b40c" name="double" isAbstract="false" isLeaf="false" cachedFullName="double">
+        <elementDefinition Id="be89b7d8-101f-4771-b7e4-b002d9cc934e" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="5aa028f2-b7e7-4a92-9a66-eb748c53ba81" name="priority_queue&lt;Patient&gt;" isAbstract="false" isLeaf="false" cachedFullName="priority_queue&lt;Patient&gt;">
+        <elementDefinition Id="1aee3c5e-062b-4b50-81bd-dc9f1af7b23a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7a529e6d-2cec-4639-ab66-c0c1f61c2efc" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="3be475c7-55a2-4f90-bf09-37540cf29cea" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="18b55ba4-06e5-4c6c-b3e4-681be21b0f71" name="TreatmentQueue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4eebcb6f-0bca-4569-bf9f-1b06298b4979" />
+        <ownedAttributesInternal>
+          <property Id="9db598ef-98cc-4241-8f76-f39d7dc7ab28" name="the_queue" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="67f78c3a-46cd-4391-a67f-77e4e23200dc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="135b5f3b-7ff6-44e3-9437-e335434adf8d" LastKnownName="queue&lt;Patient&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="20d23c4c-bda5-49a1-8e16-e793e94b17d8" name="Waiting_room_queue" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="ba82e826-e26e-42c1-87a7-d29f869a8e77" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0d01bd5b-a6c9-4719-a749-747372185dfa" LastKnownName="WaitingRoomQueue" />
+            </type_NamedElement>
+          </property>
+          <property Id="235ae6ed-0a75-4506-b03b-6b7b1dcfdf97" name="Records" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c2b8e869-6a45-449c-a982-b74b9e6c6622" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8f5b40c2-4d28-4ea5-9239-25d496422661" LastKnownName="*multiset&lt;Patient&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="b134109f-c410-42f4-8aba-68501aeb0a78" name="number_of_caregivers" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="07c26b22-0b95-46b5-8aff-194fa3a78b2d" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="e4056a38-40c5-47f4-8b03-6809e7580a83" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="37b5ec3f-fefb-41d6-b76c-11227293c2ee" name="Set_waitingRoom_Queue" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6341cf8b-9bd1-4523-bf43-94a11e97c01a" />
+          </operation>
+          <operation Id="b1a23806-fd29-443e-870e-7ce8896a8c5e" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7d5bdf92-b408-4004-ad17-50abdfd62335" />
+          </operation>
+          <operation Id="968b6446-c1ea-4a1b-847f-5f8eaf046b67" name="set_number_of_caregivers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a8eb896b-5a56-4374-ae82-da13d33e6a49" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="135b5f3b-7ff6-44e3-9437-e335434adf8d" name="queue&lt;Patient&gt;" isAbstract="false" isLeaf="false" cachedFullName="queue&lt;Patient&gt;">
+        <elementDefinition Id="2b94e72c-3c06-4a50-937b-9314bcebcf72" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0d01bd5b-a6c9-4719-a749-747372185dfa" name="WaitingRoomQueue" isAbstract="false" isLeaf="false" cachedFullName="WaitingRoomQueue">
+        <elementDefinition Id="99d7f5a4-4328-48d4-8b12-e8af7c243e27" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="ce24710f-bc70-462b-b306-06274dd3a011" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="168be728-2687-43e5-b529-817a13f7ebe0" name="NurseTreatmentQueue" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f05a369b-5c96-430a-9142-8d36ed88ab4f" />
+        <generalsInternal>
+          <generalization Id="81e0f8bc-4167-47b6-a165-a7aa51fbe0d1" isSubstitutable="false">
+            <classMoniker Id="18b55ba4-06e5-4c6c-b3e4-681be21b0f71" LastKnownName="TreatmentQueue" />
+            <elementDefinition Id="d49a3d28-fb5a-4e9a-85a8-f04d9ec69c92" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="26719aa6-f4e1-4430-89f2-0cd657c28545" name="Max_treament_time" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="4a3b76a4-a523-4658-ba65-63ca0a6777e7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="eef41d54-6192-45df-8767-3cce391d0b53" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="eed13d12-9fb6-4695-af2a-efc02e2a3183" name="min_treatment_time" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="941f9117-e034-4612-a348-f041629e284b" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="eef41d54-6192-45df-8767-3cce391d0b53" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="1efe5670-2801-4d4d-a5a1-0eb9205aae2a" name="get_treatment_complete_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5dd09083-54bc-4ef8-8ce0-0bd60eabbf0a" />
+          </operation>
+          <operation Id="613efcbf-b50e-48da-a72d-d0aef52950b0" name="set_leave_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d7c54e1-2d58-406d-af8b-695ad1a20c14" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="34198a76-4cfa-4254-9947-596c6a182ff5" name="int leave_time" direction="In" isUnique="false">
+                  <elementDefinition Id="da2aeec6-201b-48b6-a2aa-7602392bd49c" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3bd7b4ff-8b64-4946-a7b5-003f3fc0ac96" name="update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="70334b39-ad53-4870-8918-11f0cd9ceb30" />
+          </operation>
+          <operation Id="6500f721-ed7d-4049-a1ad-63e83d3400b7" name="set_treatment_time" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0e6e7d90-e57e-421f-a2cd-d0778825114e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8fa15a64-fa82-4130-8e12-ff5003bd45af" name="int max_treatnent" direction="In" isUnique="false">
+                  <elementDefinition Id="370398a0-d4a9-4fb8-a5d4-97c09f29187e" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dc5c1821-248c-4afa-9550-bb541ef0addf" name="int min_treatment" direction="In" isUnique="false">
+                  <elementDefinition Id="f50c0193-27a0-4187-abf2-e40b87e676bf" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="6de6c768-868f-43f5-a83a-b16b8924cc7a" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="eef41d54-6192-45df-8767-3cce391d0b53" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="3779b595-3686-4a5f-84b7-d3a7dddbb023" name="Simulation" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="0b861df5-9983-484b-ba15-d7168b764076" />
+        <targetEnds>
+          <association Id="787dfa35-ff2c-487f-bdab-e7940c7483f1" isDerived="false" sourceEndRoleName="Simulation" targetEndRoleName="WaitingRoomQueue" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bde8f537-211b-4d22-bb31-8aed00af05dc" LastKnownName="WaitingRoomQueue" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="92c65895-34cc-4fa2-b34d-286b651c3495" name="Simulation" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="9bb6264c-285f-409f-8731-40f811741528" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="821cb9bd-8f7a-4468-9fcf-24803b517636" name="WaitingRoomQueue" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="9e7fcbb9-d3df-4fd0-a1ac-9aa34e5438a0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="d4fcdf01-e3d9-42b5-bf27-42867baaa196" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="e75cf587-1b2b-48b2-a14a-d0ab6931f538" name="total_time" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="16d6db0d-2556-4556-93bd-f82f4a85d8f7" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9db56940-d627-463f-9581-ac03d8ae40c6" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+          <property Id="e458288b-759c-4388-ae85-cbfc3924dd5d" name="clock" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a07c3325-cee9-48c5-9840-406d9e497421" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="38936111-92a0-4824-9dd6-a3127877a5ba" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="ec2663fa-51a3-469c-a80e-5e59aac3e39d" name="main_display" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="da3a09c3-26d3-40fc-bf62-9f9081b997e5" />
+          </operation>
+          <operation Id="fc65eecb-edb7-417d-aab9-bf660d8d63c9" name="run_simulation" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9d7e9a84-2682-41e0-b0e8-a30890687203" />
+          </operation>
+          <operation Id="e45866fa-6a66-4f7c-8277-24bfa4903e03" name="show_records" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="85640c0d-81c8-43d0-8013-be4d8a33aa24" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="9db56940-d627-463f-9581-ac03d8ae40c6" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="0132b712-6f6c-4bc4-abe2-cb3f2f0fd725" name="RandomValueGenerator" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="184f23cc-77ad-4735-99aa-a7683670ffdf" />
+        <targetEnds>
+          <association Id="456ab45b-9a0d-46a1-bdee-ca5028a4cdab" isDerived="false" sourceEndRoleName="RandomValueGenerator" targetEndRoleName="WaitingRoomQueue" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bde8f537-211b-4d22-bb31-8aed00af05dc" LastKnownName="WaitingRoomQueue" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="adb2a2e9-4c16-42d1-8157-420003b759b8" name="RandomValueGenerator" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="fe260d3a-87ca-48c6-b5be-b7e4cf124121" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="050b2747-05ad-48d7-89dd-d19a28f41af1" name="WaitingRoomQueue" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="191637a9-acd4-4169-a0cc-0e7f6c424d90" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="316b59f9-9c2f-4682-9920-cc2d427fcb70" />
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="3eb301bf-52bd-445d-9cb0-e05a1399e561" name="random_int" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fe382303-7d7c-4632-b303-dfcf99dd4364" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9a5cd921-8aa7-435d-aad4-cee48abb756c" name="int max" direction="In" isUnique="false">
+                  <elementDefinition Id="35e80b2c-0e92-4f0a-a848-4f7464424aa6" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="3df7cb05-1790-4926-bf7d-7b2fe4ef2a0b" name="random_double" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c931c486-b6df-4c8a-9500-448eb65c3fef" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="3fbd7e46-eb4a-43c6-bcf8-982bc016d121" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e4056a38-40c5-47f4-8b03-6809e7580a83" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="76625507-a106-4986-ba49-ae1ce80ad8f2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9e08f5de-4884-474a-a091-9f03795daae3" name="multiset&lt;Patient&gt;" isAbstract="false" isLeaf="false" cachedFullName="multiset&lt;Patient&gt;">
+        <elementDefinition Id="4367be1d-4753-414b-bb9d-88b8a6333250" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8f5b40c2-4d28-4ea5-9239-25d496422661" name="*multiset&lt;Patient&gt;" isAbstract="false" isLeaf="false" cachedFullName="*multiset&lt;Patient&gt;">
+        <elementDefinition Id="7c245fba-058e-496c-83ad-a7b9b8480d9b" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="fc101a93-0e35-4735-b895-3153190bd161" name="ModelingProject1">
+    <elementDefinition Id="4b12dcc2-12e6-4a4f-bb37-8b5261b3cfad" />
+    <profileInstances>
+      <packageHasProfileInstances Id="17020983-0876-40b7-a873-46746a646ce9">
+        <profileInstance Id="c18c28a5-4db0-4144-86c4-14dffc805237" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="f9579e24-045b-41ce-99c3-d52345e0e7ee">
+        <profileInstance Id="11038745-22db-4bda-b8ab-df93f9992b2f" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
