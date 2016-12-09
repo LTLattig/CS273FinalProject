@@ -11,13 +11,15 @@ extern Random myRandom;
 
 class WaitingRoomQueue
 {
+	friend class Treament;
 private:
 	double arrivalRate;
 	unsigned int numberTreated;
 	std::multiset<Patient> Records;
-	std::priority_queue<Patient*> myQueue;
+	std::priority_queue<Patient*> myQueue; 
 	long unsigned int totalWait;
 public:
+	
 	WaitingRoomQueue() : totalWait(0),numberTreated(0){}
 	void set_arrivalRate(double arrival_rate) {
 		this->arrivalRate = arrival_rate;
@@ -30,6 +32,7 @@ public:
 	int get_numberTreated() {
 		return numberTreated;
 	}
+
 	void update(int clock)
 	{
 		if(myRandom.nextDouble() < arrivalRate)
@@ -37,6 +40,5 @@ public:
 			myQueue.push(new Patient(clock));
 		}
 	}
-	friend class Treament;
 };
 #endif

@@ -5,9 +5,12 @@
 #include "WaitingRoomQueue.h"
 #include "Patient.h"
 #include "RandomValueGenerator.h"
-class DoctorTreatment: public Treatment
+class trq_Doctor: public Treatment
 {
-
+private:
+	unsigned int minTreatmentTime, maxTreatmentTime;
+public:
+	trq_Doctor(): minTreatmentTime(1), maxTreatmentTime(20) {}
 };
 
 #endif

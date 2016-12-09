@@ -16,9 +16,8 @@ public:
 		srand((unsigned int)std::time(0));
 	}
 
-	/** Initializes the randon mumber generator using a
-	supplied seed.
-	*/
+	/** Initializes the random mumber generator using a
+	supplied seed. 	*/
 	Random(int seed) {
 		srand(seed);
 	}
