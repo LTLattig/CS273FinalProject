@@ -35,9 +35,16 @@ public:
 
 	void update(int clock)
 	{
-		if(myRandom.nextDouble() < arrivalRate)
+		if(myRandom.nextDouble() < arrivalRate) // if a patient arrives, assign them a random illness severity
 		{
-			myQueue.push(new Patient(clock));
+			int severityCheck = myRandom.nextDouble(); 
+			
+			if (severityCheck >= .9)
+				myQueue.push(new Patient(clock, myRandom.nextInt(4) + 16));
+			if (severityCheck >= .8)
+				myQueue.push(new Patient(clock, myRandom.nextInt(4) + 11));
+			else
+				myQueue.push(new Patient(clock, myRandom.nextInt(9) + 1));
 		}
 	}
 };
