@@ -16,14 +16,14 @@ class WaitingRoomQueue
 	friend class TreamentQueue;
 private:
 	double arrivalRate;
-	unsigned int numberTreated;
+	unsigned int numberArrived;
 	std::multiset<Patient> Records;
 	std::priority_queue<Patient*> highPriority;
 	std::priority_queue<Patient*> lowPriority;
 	long unsigned int totalWait;
 public:
 	
-	WaitingRoomQueue() : totalWait(0),numberTreated(0){}
+	WaitingRoomQueue() : totalWait(0),numberArrived(0){}
 	void set_arrivalRate(double arrival_rate) {
 		this->arrivalRate = arrival_rate;
 	}
@@ -32,8 +32,8 @@ public:
 		return totalWait;
 	}
 
-	int get_numberTreated() {
-		return numberTreated;
+	int get_numberArrived() {
+		return numberArrived;
 	}
 	std::multiset<Patient> &getRecords()
 	{
@@ -55,11 +55,12 @@ public:
 			double severityCheck = my_random.nextDouble(); 
 			
 			if (severityCheck >= .9)
-				highPriority.push(new Patient(clock, my_random.nextInt(4) + 16,name));
-			if (severityCheck >= .8)
-				highPriority.push(new Patient(clock, my_random.nextInt(4) + 11,name));
+				highPriority.push(new Patient(clock, my_random.nextInt(5) + 16,name)); //random value generator doesn't go up to n, needs to increase by 1
+			else if (severityCheck >= .7)
+				highPriority.push(new Patient(clock, my_random.nextInt(5) + 11,name));
 			else
-				lowPriority.push(new Patient(clock, my_random.nextInt(9) + 1,name));
+				lowPriority.push(new Patient(clock, my_random.nextInt(10) + 1,name));
+			numberArrived++;
 		}
 	}
 };

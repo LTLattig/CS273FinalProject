@@ -25,7 +25,7 @@ public:
 
 		if (!CurrentlyTreating.empty())
 		{
-			std::vector<Patient*>::iterator it = CurrentlyTreating.begin();
+			/*std::vector<Patient*>::iterator it = CurrentlyTreating.begin();
 			while (it != CurrentlyTreating.end())
 			{
 				Patient *patient = *it;
@@ -37,6 +37,18 @@ public:
 				}
 				else
 					++it;
+			}*/
+			for (int i = 0; i < CurrentlyTreating.size();)
+			{
+				Patient *patient = CurrentlyTreating[i];
+				if ((clock - patient->startTreatmentTime) > patient->treatmentTime)
+				{
+					patient->endTreatmentTime = clock;
+					waitingQueue->getRecords().insert(*patient);
+					CurrentlyTreating.erase(CurrentlyTreating.begin() + i);
+				}
+				else
+					++i;
 			}
 		}
 		if (CurrentlyTreating.size() < numberOfCaregivers)
@@ -47,7 +59,7 @@ public:
 				{
 					Patient *patient = waitingQueue->getLowPriorityQueue().top();
 					patient->startTreatmentTime = clock;
-					patient->treatmentTime = my_random.nextInt((maxTreatmentTime - minTreatmentTime));
+					patient->treatmentTime = my_random.nextInt((maxTreatmentTime - minTreatmentTime))+1;
 					CurrentlyTreating.push_back(patient);
 					waitingQueue->getLowPriorityQueue().pop();
 					i = CurrentlyTreating.size();

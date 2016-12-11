@@ -62,19 +62,20 @@ public:
 		std::cout << "This time rather than being an airport, we're a town with a population of 2000!\n";
 		std::cout << "Strange how that works out.\n\n";
 
-		int rate = read_int("Please let us know how bad you think the\n health conditions in CS273ville are (patients/hour): ", 1, 59);
+		int rate = read_int("Please let us know how bad you think the\nhealth conditions in CS273ville are (patients/hour): ", 1, 59);
 		/*Also: user_sadism*/
 		double patient_rate = rate / 60.0;
 
 		std::cout << "Given that answer, you're going to help us set up a hospital that'll run for one full week.\n";
-
-		int num_doctors = read_int("How many doctors are helping run this show? ", 1, 2017);
+	
+		int num_doctors = read_int("How many doctors are helping run this show? ", 1, 100);
 		doc_q = new trq_Doctor(num_doctors);
-		int num_nurses = read_int("How about nurses? How many nurses do we have? ", 1, 2017);
+		int num_nurses = read_int("How about nurses? How many nurses do we have? ", 1, 100);
 		nurse_q = new trq_Nurse(num_nurses);
 
-		if (num_doctors + num_nurses > 2000)
-			std::cout << "That's uh. Huh. You're aware your medical staff outnumbers townsfolk, right?";
+	
+
+		
 
 		// sets arrival rate for the waiting room
 		waiting_room->set_arrivalRate(patient_rate);
@@ -107,8 +108,32 @@ public:
 			for (auto it = waiting_room->getRecords().lower_bound(Patient(name)); it != waiting_room->getRecords().upper_bound(Patient(name)); ++it)
 			{
 				std::cout << "\t\t Visit(" << visitTimes << ") \t Severity : " << it->severity << " \t Treatment Time : " << it->treatmentTime << std::endl;
+				visitTimes++;
 			}
+			
 		}
+		
+	}
+	void displayStats()
+	{
+		double totalVisitsInRecords = waiting_room->getRecords().size();
+		double lessthan10 = 0, greaterthan15 = 0, between11and15 = 0;
+		double averageWait = 0;
+		auto it = waiting_room->getRecords().begin();
+		while (it != waiting_room->getRecords().end())
+		{
+			averageWait += it->endTreatmentTime - it->arrivalTime;
+			if (it->severity <= 10)
+				lessthan10++;
+			else if (it->severity > 15)
+				greaterthan15++;
+			else
+				between11and15++;
+			++it;
+		}
+		std::cout << "\n\tPercentage of Patients treated within timeframe: " << totalVisitsInRecords / waiting_room->get_numberArrived() * 100 << "%\n";
+		std::cout << "\n\tSeverity less than 10: " << lessthan10 / totalVisitsInRecords * 100 << "%\t\tSeverity Between 11 and 15: " << between11and15 / totalVisitsInRecords * 100 << "%\t\tSeverity over 15: " << greaterthan15 / totalVisitsInRecords * 100 << std::endl;
+		std::cout << "\n\tAverage Wait Time: " << averageWait / totalVisitsInRecords << " minutes\n";
 	}
 };
 

@@ -20,18 +20,17 @@ public:
 
 		if (!CurrentlyTreating.empty())
 		{
-			std::vector<Patient*>::iterator it = CurrentlyTreating.begin();
-			while (it != CurrentlyTreating.end())
+			for (int i = 0; i < CurrentlyTreating.size();)
 			{
-				Patient *patient = *it;
+				Patient *patient = CurrentlyTreating[i];
 				if ((clock - patient->startTreatmentTime) > patient->treatmentTime)
 				{
 					patient->endTreatmentTime = clock;
-					this->waitingQueue->getRecords().insert(*patient);
-					CurrentlyTreating.erase(it);
+					waitingQueue->getRecords().insert(*patient);
+					CurrentlyTreating.erase(CurrentlyTreating.begin() + i);
 				}
 				else
-					++it;
+					++i;
 			}
 		}
 		if (CurrentlyTreating.size()<numberOfCaregivers)
@@ -41,7 +40,7 @@ public:
 				if (!this->waitingQueue->getHighPriorityQueue().empty())				{
 					Patient *patient = this->waitingQueue->getHighPriorityQueue().top();
 					patient->startTreatmentTime = clock;
-					patient->treatmentTime = my_random.nextInt((maxTreatmentTime - minTreatmentTime));
+					patient->treatmentTime = my_random.nextInt((maxTreatmentTime+1 - minTreatmentTime))+1;
 					CurrentlyTreating.push_back(patient);
 					this->waitingQueue->getHighPriorityQueue().pop();
 					i = CurrentlyTreating.size();
@@ -50,7 +49,7 @@ public:
 				{
 					Patient *patient = this->waitingQueue->getLowPriorityQueue().top();
 					patient->startTreatmentTime = clock;
-					patient->treatmentTime = my_random.nextInt((maxTreatmentTime - minTreatmentTime));
+					patient->treatmentTime = my_random.nextInt((maxTreatmentTime+1 - minTreatmentTime))+1;
 					CurrentlyTreating.push_back(patient);
 					this->waitingQueue->getLowPriorityQueue().pop();
 					i = CurrentlyTreating.size();
