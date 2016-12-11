@@ -94,6 +94,24 @@ public:
 		}
 	}
 
+	void search_all()
+	{
+		auto search = waiting_room->getRecords().begin();
+		if (search != waiting_room->getRecords().end())
+		{
+			std::cout << search->name << std::endl;
+			std::cout << "*********************" << std::endl;
+			std::cout << "Visits - " << waiting_room->getRecords().count(Patient(search->name)) << std::endl;
+
+			int visitTimes = 1;
+			for (auto it = waiting_room->getRecords().lower_bound(Patient(search->name)); it != waiting_room->getRecords().upper_bound(Patient(search->name)); ++it)
+			{
+				std::cout << "\t\t Visit(" << visitTimes << ") \t Severity : " << it->severity << " \t Treatment Time : " << it->treatmentTime << std::endl;
+				visitTimes++;
+			}
+
+		}
+	}
 
 	void search_records(std::string name)
 	{

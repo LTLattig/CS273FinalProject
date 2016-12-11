@@ -1,8 +1,9 @@
 ﻿  main.cpp
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(46): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(55): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\nursetreatment.h(56): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\nursetreatment.h(65): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\simulation.h(119): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'double', possible loss of data
-  Hospital Simulator.vcxproj -> C:\Users\Bao\Documents\GitHub\CS273FinalProject\Hospital Simulator\x64\Debug\Hospital Simulator.exe
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(38): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(46): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(55): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\nursetreatment.h(56): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\nursetreatment.h(65): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\simulation.h(137): warning C4244: 'initializing': conversion from 'unsigned __int64' to 'double', possible loss of data
+  Hospital Simulator.vcxproj -> C:\Users\Luke Lattig\Desktop\New folder (2)\Repositories\CS273FinalProject\Hospital Simulator\x64\Debug\Hospital Simulator.exe
+  Hospital Simulator.vcxproj -> C:\Users\Luke Lattig\Desktop\New folder (2)\Repositories\CS273FinalProject\Hospital Simulator\x64\Debug\Hospital Simulator.pdb (Full PDB)

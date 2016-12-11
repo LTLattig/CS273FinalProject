@@ -5,9 +5,12 @@
 #include <string>
 #include <set>
 #include <queue>
+#include <fstream>
+#include <vector>
 #include "Patient.h"
 #include "RandomValueGenerator.h"
 #include "TreatmentQueue.h"
+
 
 extern Random my_random;
 
@@ -18,14 +21,29 @@ private:
 	double arrivalRate;
 	unsigned int numberArrived;
 	std::multiset<Patient> Records;
+	std::vector<std::string> namePool;
 	std::priority_queue<Patient*> highPriority;
 	std::priority_queue<Patient*> lowPriority;
+	
 	long unsigned int totalWait;
 public:
 	
 	WaitingRoomQueue() : totalWait(0),numberArrived(0){}
 	void set_arrivalRate(double arrival_rate) {
 		this->arrivalRate = arrival_rate;
+	}
+
+	void set_namePool()
+	{
+		std::ifstream inFirst("residents_of_273ville.txt");
+		std::ifstream inLast("surnames_of_273ville.txt");
+		std::string first_name;
+		std::string last_name;
+		while (getline(inFirst, first_name) && getline(inLast, last_name)) {
+			namePool.push_back(first_name + " " + last_name);
+		}
+		inFirst.close();
+		inLast.close();
 	}
 
 	int get_totalWait() {
@@ -39,6 +57,10 @@ public:
 	{
 		return this->Records;
 	}
+	std::string getName(int i)
+	{
+		return namePool[i];
+	}
 	std::priority_queue<Patient*> &getHighPriorityQueue()
 	{
 		return this->highPriority;
@@ -47,13 +69,15 @@ public:
 	{
 		return this->lowPriority;
 	}
+
 	void update(int clock)
 	{
-		std::string name = "temp";
+		std::string name = getName(my_random.nextInt(1999));
+		
 		if(my_random.nextDouble() < arrivalRate) // if a patient arrives, assign them a random illness severity
 		{
 			double severityCheck = my_random.nextDouble(); 
-			
+
 			if (severityCheck >= .9)
 				highPriority.push(new Patient(clock, my_random.nextInt(5) + 16,name)); //random value generator doesn't go up to n, needs to increase by 1
 			else if (severityCheck >= .7)
