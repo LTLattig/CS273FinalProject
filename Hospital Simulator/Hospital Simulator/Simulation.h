@@ -11,7 +11,7 @@
 #include "NurseTreatment.h"
 #include "WaitingRoomQueue.h"
 #include "RandomValueGenerator.h"
-
+Random my_random;
 class Simulation
 {
 private:
@@ -53,8 +53,7 @@ public:
 	Simulation()
 	{
 		waiting_room = new WaitingRoomQueue();
-		doc_q = new trq_Doctor(); 
-		nurse_q = new trq_Nurse(); 
+
 	}
 
 	void enter_data()
@@ -70,7 +69,9 @@ public:
 		std::cout << "Given that answer, you're going to help us set up a hospital that'll run for one full week.\n";
 
 		int num_doctors = read_int("How many doctors are helping run this show? ", 1, 2017);
+		doc_q = new trq_Doctor(num_doctors);
 		int num_nurses = read_int("How about nurses? How many nurses do we have? ", 1, 2017);
+		nurse_q = new trq_Nurse(num_nurses);
 
 		if (num_doctors + num_nurses > 2000)
 			std::cout << "That's uh. Huh. You're aware your medical staff outnumbers townsfolk, right?";
@@ -80,17 +81,35 @@ public:
 	}
 	void run_simulation()
 	{
+		doc_q->set_waiting_room(waiting_room);
+		nurse_q->set_waiting_room(waiting_room);
 		// Puts the simulation through the motions
 		for (clock = 0; clock < 10080; clock++)
 		{
 			//update functions go here
+			waiting_room->update(clock);
+			nurse_q->update(clock);
+			doc_q->update(clock);
 		}
 	}
 
-	//I think we need a function to search through patient records. \
-	Patient records would be generated in the DocQ and NurseQ, yeah? \
-	Wait, no. It's in the WRQ. In any case: \
-	void search_records() {}
+
+	void search_records(std::string name)
+	{
+		auto search = waiting_room->getRecords().find(Patient(name));
+		if (search != waiting_room->getRecords().end())
+		{
+			std::cout << name << std::endl;
+			std::cout << "*********************" << std::endl;
+			std::cout << "Visits - " << waiting_room->getRecords().count(Patient(name)) << std::endl;
+
+			int visitTimes = 1;
+			for (auto it = waiting_room->getRecords().lower_bound(Patient(name)); it != waiting_room->getRecords().upper_bound(Patient(name)); ++it)
+			{
+				std::cout << "\t\t Visit(" << visitTimes << ") \t Severity : " << it->severity << " \t Treatment Time : " << it->treatmentTime << std::endl;
+			}
+		}
+	}
 };
 
 #endif

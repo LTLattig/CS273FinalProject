@@ -13,7 +13,7 @@ public:
 	as the seed.
 	*/
 	Random() {
-		srand((unsigned int)std::time(0));
+		srand((unsigned int)std::time(NULL));
 	}
 
 	/** Initializes the random mumber generator using a

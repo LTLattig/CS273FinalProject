@@ -1,9 +1,7 @@
 ﻿  main.cpp
-c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\waitingroomqueue.h(40): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\treatmentqueue.h(20): warning C4010: single-line comment contains line-continuation character
-c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\treatmentqueue.h(29): error C2248: 'WaitingRoomQueue::myQueue': cannot access private member declared in class 'WaitingRoomQueue'
-  c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\waitingroomqueue.h(19): note: see declaration of 'WaitingRoomQueue::myQueue'
-  c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\waitingroomqueue.h(13): note: see declaration of 'WaitingRoomQueue'
-c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\simulation.h(91): warning C4010: single-line comment contains line-continuation character
-c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\simulation.h(92): warning C4010: single-line comment contains line-continuation character
-c:\users\luke lattig\desktop\new folder (2)\repositories\cs273finalproject\hospital simulator\hospital simulator\simulation.h(93): warning C4010: single-line comment contains line-continuation character
+c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(47): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(56): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\nursetreatment.h(44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\nursetreatment.h(53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Hospital Simulator.vcxproj -> C:\Users\Bao\Documents\GitHub\CS273FinalProject\Hospital Simulator\x64\Debug\Hospital Simulator.exe

@@ -7,16 +7,19 @@
 #include <queue>
 #include "Patient.h"
 #include "RandomValueGenerator.h"
-extern Random myRandom;
+#include "TreatmentQueue.h"
+
+extern Random my_random;
 
 class WaitingRoomQueue
 {
-	friend class Treament;
+	friend class TreamentQueue;
 private:
 	double arrivalRate;
 	unsigned int numberTreated;
 	std::multiset<Patient> Records;
-	std::priority_queue<Patient*> myQueue; 
+	std::priority_queue<Patient*> highPriority;
+	std::priority_queue<Patient*> lowPriority;
 	long unsigned int totalWait;
 public:
 	
@@ -32,19 +35,31 @@ public:
 	int get_numberTreated() {
 		return numberTreated;
 	}
-
+	std::multiset<Patient> &getRecords()
+	{
+		return this->Records;
+	}
+	std::priority_queue<Patient*> &getHighPriorityQueue()
+	{
+		return this->highPriority;
+	}
+	std::priority_queue<Patient*> &getLowPriorityQueue()
+	{
+		return this->lowPriority;
+	}
 	void update(int clock)
 	{
-		if(myRandom.nextDouble() < arrivalRate) // if a patient arrives, assign them a random illness severity
+		std::string name = "temp";
+		if(my_random.nextDouble() < arrivalRate) // if a patient arrives, assign them a random illness severity
 		{
-			int severityCheck = myRandom.nextDouble(); 
+			double severityCheck = my_random.nextDouble(); 
 			
 			if (severityCheck >= .9)
-				myQueue.push(new Patient(clock, myRandom.nextInt(4) + 16));
+				highPriority.push(new Patient(clock, my_random.nextInt(4) + 16,name));
 			if (severityCheck >= .8)
-				myQueue.push(new Patient(clock, myRandom.nextInt(4) + 11));
+				highPriority.push(new Patient(clock, my_random.nextInt(4) + 11,name));
 			else
-				myQueue.push(new Patient(clock, myRandom.nextInt(9) + 1));
+				lowPriority.push(new Patient(clock, my_random.nextInt(9) + 1,name));
 		}
 	}
 };
