@@ -4,7 +4,10 @@
 #include <cstdlib>
 #include <ctime>
 
-/** Class to encapsulate the standard random number generator. */
+/* Code Used from Airport Simulation Project
+ * Whitworth Univerity
+ * CS 273
+ */
 class Random {
 
 public:

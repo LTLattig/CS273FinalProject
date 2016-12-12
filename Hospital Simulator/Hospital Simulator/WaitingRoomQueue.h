@@ -31,15 +31,19 @@ public:
 	WaitingRoomQueue() : totalWait(0),numberArrived(0){}
 	void set_arrivalRate(double arrival_rate) {
 		this->arrivalRate = arrival_rate;
+		set_namePool();
 	}
-
+	/********************************//*
+	Sets the name pool from the first
+	name and surname test files 
+	*//********************************/
 	void set_namePool()
 	{
 		std::ifstream inFirst("residents_of_273ville.txt");
 		std::ifstream inLast("surnames_of_273ville.txt");
 		std::string first_name;
 		std::string last_name;
-		while (getline(inFirst, first_name) && getline(inLast, last_name)) {
+		while (getline(inFirst, first_name) && getline(inLast,last_name)) {
 			namePool.push_back(first_name + " " + last_name);
 		}
 		inFirst.close();
@@ -69,10 +73,16 @@ public:
 	{
 		return this->lowPriority;
 	}
-
+	/********************************//*
+	Adds new patients to the highPriority
+	and lowPriority prioirty Queues based 
+	on the frequency of each severity.
+	Chooses a random resident from the name
+	pool.
+	*//********************************/
 	void update(int clock)
 	{
-		std::string name = getName(my_random.nextInt(1999));
+		std::string name = getName(my_random.nextInt(namePool.size()-1));
 		
 		if(my_random.nextDouble() < arrivalRate) // if a patient arrives, assign them a random illness severity
 		{
