@@ -56,7 +56,7 @@ public:
 		std::string first_name;
 		std::string last_name;
 		while (getline(inFirst, first_name) && getline(inLast,last_name)) {
-			namePool.push_back(first_name + " " + last_name);
+			namePool.push_back(last_name + ", " + first_name);
 		}
 		inFirst.close();
 		inLast.close();
