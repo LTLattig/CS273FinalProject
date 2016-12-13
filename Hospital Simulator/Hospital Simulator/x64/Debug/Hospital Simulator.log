@@ -1,5 +1,5 @@
 ﻿  main.cpp
-c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\waitingroomqueue.h(85): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\waitingroomqueue.h(97): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
 c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(44): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(53): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 c:\users\bao\documents\github\cs273finalproject\hospital simulator\hospital simulator\doctortreatment.h(63): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data

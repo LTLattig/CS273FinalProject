@@ -14,8 +14,8 @@ protected:
 	// contains the number of caregivers for the queue
 	unsigned short int numberOfCaregivers;
 	// takes Records multiset from WaitingRoomQueue
-	unsigned int minTreatmentTime, maxTreatmentTime;
-	WaitingRoomQueue *waitingQueue; // points to the 
+
+	WaitingRoomQueue *waitingQueue; 
 	std::vector <Patient*> CurrentlyTreating;
 
 public:
@@ -24,9 +24,9 @@ public:
 	void set_waiting_room(WaitingRoomQueue *waiting_rm)
 	{ this->waitingQueue = waiting_rm; }
 
-	void update() //Polymorphim
+	void update() //Polymorphism
 	{
-		std::cout << "Hmm... I'm not a trained proffesional but I'll wing it.\n";
+		std::cout << "Hmm... I'm not a trained professional but I'll wing it.\n";
 	}
 	
 	

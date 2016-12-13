@@ -41,6 +41,18 @@ public:
 	{
 		std::ifstream inFirst("residents_of_273ville.txt");
 		std::ifstream inLast("surnames_of_273ville.txt");
+		if(inFirst.fail())
+		{
+			std::cout << "Error: 'residents_of_273ville.txt' not found.\n";
+			inFirst.close();
+			exit(1);
+		}
+		if (inLast.fail())
+		{
+			std::cout << "Error: 'surnames_of_273ville.txt' not found.\n";
+			inLast.close();
+			exit(1);
+		}
 		std::string first_name;
 		std::string last_name;
 		while (getline(inFirst, first_name) && getline(inLast,last_name)) {
